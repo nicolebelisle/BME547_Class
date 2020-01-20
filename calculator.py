@@ -1,39 +1,42 @@
 #Calculator
 
-def add(x,y):
-    z = x + y
-    print("{} + {} = {}".format(x, y, z))
-    return z
-def subtract(x,y):
-    z = x - y
-    print("{} - {} = {}".format(x, y, z))
-    return z
-def multiply(x,y):
-    z = x * y
-    print("{} * {} = {}".format(x, y, z))
-    return z
-def divide(x,y):
-    z = x / y
-    print("{} / {} = {}".format(x, y, z))
-    return z
+def add(a,b):
+    c = a + b
+    return c, "+"
 
-x= input("Enter a Letter")
-# print("You entered {}".format(x))
-# print("This is a line of code.")
-# print(x)
-# print(16.4)
-if x == "a":
-    d =add(56,73)
-    if d>100:
-        print("This number is too high.")
-elif x == "s":
-    d =subtract(1,2)
-    #print("{} - {} = {}".format(a,b,c))
-elif x == "h":
-    a = 5
-    b = 4
+def subtract(a,b):
+    c = a - b
+    return c, "-"
+
+def multiply(a,b):
     c = a * b
-    print("{} * {} = {}".format(a,b,c))
+    return c, "*"
+
+def divide(a,b):
+    c = a / b
+    return c, "*"
+x= input("Enter a Letter: ")
+a = input("Enter First Number: ")
+y = float(a)
+b = input("Enter Second Number: ")
+z = float(b)
+
+if x == "a":
+    answer, symbol = add(y, z)
+    print("{} {} {} = {}".format(y, symbol, z, answer))
+
+elif x == "s":
+    answer, symbol = subtract(y, z)
+    print("{} {} {} = {}".format(y, symbol, z, answer))
+    
+elif x == "m":
+    answer, symbol = multiply(y, z)
+    print("{} {} {} = {}".format(y, symbol, z, answer))
+    
+elif x == "d":
+    answer, symbol = divide(y, z)
+    print("{} {} {} = {}".format(y, symbol, z, answer))
+    
 else:
     print("The {} command is not recognized.".format(x))
 print("Done")
